@@ -1,5 +1,3 @@
-# 🎮 Hackathon Challenge 2025
-
 
 > A classic card-flipping memory game built entirely in vanilla HTML/CSS/JS with advanced features, accessibility, and offline capabilities.
 
@@ -18,19 +16,13 @@
 
 ## 🎯 Project Overview
 
-**Memory Warriors** is an innovative memory matching game that demonstrates modern web development best practices while maintaining the classic gameplay everyone loves. Built for the **Warriors Challenge Hackathon 2025**, this project showcases:
-
+**Memory Game** is an innovative memory matching game that demonstrates modern web development best practices while maintaining the classic gameplay everyone loves.
 - **Single-Request Architecture** - Everything in one HTML file
 - **Offline-First Design** - Works completely offline after initial load
 - **Monolithic Structure** - Self-contained and portable
 - **Advanced Accessibility** - Screen reader friendly with keyboard navigation
 - **Performance Optimized** - Smooth animations and efficient memory usage
 
-### 🏆 Hackathon Tracks Achieved
-
-✅ **Single-Request Samurai** - Only 1 HTTP request  
-✅ **Offline Survivalist** - Works completely offline  
-✅ **Monolith Master** - Complete app in single file  
 
 ## ✨ Features
 
@@ -206,11 +198,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Siddharth Prabhakr** - Creator of Memory Warriors
-
-- **Project**: Memory Warriors - Hackathon Challenge 2025
+**Siddharth Prabhakr** - Creator of Memory Game.
 - **GitHub**: [@siddharthprabhakr](https://github.com/siddharthprabhakr)
-- **Email**: siddharth.prabhakr@example.com
+
 
 ## 🙏 Acknowledgments
 
