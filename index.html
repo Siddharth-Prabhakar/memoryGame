@@ -153,16 +153,23 @@
         .floating-cat {
             position: absolute;
             font-size: 2rem;
-            opacity: 0.1;
+            opacity: 0.3;
             animation: float 15s infinite linear;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
         }
         
         @keyframes float {
             0% {
                 transform: translateY(100vh) rotate(0deg);
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 0.4;
             }
             100% {
                 transform: translateY(-100px) rotate(360deg);
+                opacity: 0.2;
             }
         }
         
