@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>⚔️ Memory Warriors - Hackathon Challenge 2025</title>
+    <title>🐱 Memory Cats - Hackathon Challenge 2025</title>
     
     <!--
     🏆 WARRIORS CHALLENGE HACKATHON 2025 - DOCUMENTATION
@@ -14,7 +15,7 @@
     3. Monolith Master ✅ → Complete app in single .html file
     
     🎯 PROJECT OVERVIEW:
-    Memory Match Game - A classic card-flipping memory game with multiple difficulty levels,
+    Memory Cats Game - A classic card-flipping memory game with adorable cats and multiple difficulty levels,
     built entirely in vanilla HTML/CSS/JS. Features include scoring, timing, accessibility,
     and local storage persistence.
     
@@ -129,12 +130,40 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            background: linear-gradient(135deg, #fef3e2 0%, #fde8cc 100%);
             color: var(--text-primary);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             line-height: 1.5;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .floating-cats {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-cat {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+            }
         }
         
         .sr-only {
@@ -168,7 +197,7 @@
         header {
             text-align: center;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 248, 235, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
         }
@@ -176,7 +205,7 @@
         h1 {
             font-size: clamp(1.5rem, 4vw, 2.5rem);
             font-weight: 700;
-            color: var(--primary);
+            color: #d97706;
             margin-bottom: 0.5rem;
         }
         
@@ -201,7 +230,7 @@
             align-items: center;
             margin-bottom: 2rem;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 248, 235, 0.9);
             border-radius: 12px;
             border: 1px solid var(--border);
         }
@@ -278,7 +307,7 @@
             gap: 0.75rem;
             margin: 2rem auto;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 248, 235, 0.95);
             border-radius: 16px;
             border: 1px solid var(--border);
             box-shadow: var(--shadow-lg);
@@ -360,7 +389,7 @@
         .game-over {
             text-align: center;
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 248, 235, 0.98);
             border-radius: 16px;
             border: 1px solid var(--border);
             box-shadow: var(--shadow-lg);
@@ -402,7 +431,7 @@
         .help {
             margin-top: 2rem;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 248, 235, 0.9);
             border-radius: 12px;
             border: 1px solid var(--border);
         }
@@ -481,9 +510,21 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <header>
-        <h1>⚔️ Memory Warriors</h1>
-        <p class="subtitle">Hackathon Challenge 2025 - Test Your Memory Skills!</p>
+        <h1>🐱 Memory Cats</h1>
+        <p class="subtitle">Hackathon Challenge 2025 - Match the Adorable Cats!</p>
     </header>
+    
+    <div class="floating-cats">
+        <div class="floating-cat" style="left: 10%; animation-delay: 0s;">🐱</div>
+        <div class="floating-cat" style="left: 20%; animation-delay: 3s;">😸</div>
+        <div class="floating-cat" style="left: 30%; animation-delay: 6s;">😺</div>
+        <div class="floating-cat" style="left: 40%; animation-delay: 9s;">😻</div>
+        <div class="floating-cat" style="left: 50%; animation-delay: 12s;">🙀</div>
+        <div class="floating-cat" style="left: 60%; animation-delay: 2s;">😿</div>
+        <div class="floating-cat" style="left: 70%; animation-delay: 5s;">😾</div>
+        <div class="floating-cat" style="left: 80%; animation-delay: 8s;">🐈</div>
+        <div class="floating-cat" style="left: 90%; animation-delay: 11s;">🐈‍⬛</div>
+    </div>
     
     <main id="main-content">
         <div class="game-controls" role="toolbar" aria-label="Game controls">
@@ -525,7 +566,7 @@
         </div>
         
         <div id="game-over" class="game-over" style="display: none;" role="dialog" aria-labelledby="game-over-title">
-            <h2 id="game-over-title">🎉 Congratulations!</h2>
+            <h2 id="game-over-title">🎉 Purrfect! You Did It!</h2>
             <div class="stats">
                 <div class="stat">
                     <div class="stat-label">Final Time</div>
@@ -550,11 +591,11 @@
         </div>
         
         <div class="help">
-            <h3>How to Play</h3>
+            <h3>How to Play with Cats</h3>
             <ul>
-                <li>🎯 Click or press <kbd>Space</kbd>/<kbd>Enter</kbd> to flip cards</li>
-                <li>🔍 Find matching pairs to score points</li>
-                <li>⏱️ Complete the game as quickly as possible</li>
+                <li>🐾 Click or press <kbd>Space</kbd>/<kbd>Enter</kbd> to flip cat cards</li>
+                <li>😸 Find matching cat pairs to score points</li>
+                <li>⏱️ Match all cats as quickly as possible</li>
                 <li>⌨️ Use <kbd>Tab</kbd> and arrow keys to navigate</li>
                 <li>🎨 Press <kbd>H</kbd> to toggle high contrast mode</li>
                 <li>🔊 Press <kbd>M</kbd> to toggle sound effects</li>
@@ -580,7 +621,7 @@
                 this.currentDifficulty = 'medium';
                 this.focusedCardIndex = 0;
                 
-                this.symbols = ['🌟', '⚔️', '🏆', '🎯', '🔥', '⚡', '💎', '🚀', '🎪', '🎨', '🎵', '🎮', '🎲'];
+                this.symbols = ['😸', '😺', '😻', '😼', '😽', '🙀', '😿', '😾', '🐱', '🐈', '🐈‍⬛', '🐾', '🧶'];
                 this.audioContext = null;
                 
                 this.initializeAudio();
@@ -651,7 +692,7 @@
                 this.generateCards();
                 this.renderBoard();
                 this.startTimer();
-                this.announce('New game started. Navigate with Tab and arrow keys, flip cards with Space or Enter.');
+                this.announce('New cat matching game started! Navigate with Tab and arrow keys, flip cards with Space or Enter.');
             }
             
             resetGame() {
@@ -679,7 +720,7 @@
                 
                 // Handle odd number of cards
                 if (gridSize % 2 === 1) {
-                    cardData.push('🏅'); // Special single card
+                    cardData.push('🐾'); // Special single cat paw card
                 }
                 
                 // Shuffle cards
@@ -767,7 +808,7 @@
                 this.playSound(440, 0.1); // Flip sound
                 
                 this.updateCardDisplay();
-                this.announce(`Card flipped, showing ${this.cards[index].symbol}`);
+                this.announce(`Cat card flipped, showing ${this.cards[index].symbol}`);
                 
                 if (this.flippedCards.length === 2) {
                     this.moves++;
@@ -792,7 +833,7 @@
                     this.score += baseScore + timeBonus + moveBonus;
                     
                     this.playSound(523, 0.3, 'triangle'); // Match sound
-                    this.announce(`Match found! Score: ${this.score}`);
+                    this.announce(`Cat match found! Meow! Score: ${this.score}`);
                     
                     // Add visual feedback
                     const cardElements = [
@@ -809,7 +850,7 @@
                 } else {
                     // No match
                     this.playSound(220, 0.2, 'sawtooth'); // Miss sound
-                    this.announce('No match, cards will flip back');
+                    this.announce('No cat match, cards will flip back');
                     
                     // Add visual feedback for wrong match
                     const cardElements = [
@@ -900,6 +941,7 @@
                 document.getElementById('game-over').focus();
                 
                 this.announce(`Game completed! Final score: ${this.score}, Time: ${this.formatTime(finalTime)}, Moves: ${this.moves}`);
+                this.announce(`Purrfect! All cats matched! Final score: ${this.score}, Time: ${this.formatTime(finalTime)}, Moves: ${this.moves}`);
             }
             
             saveHighScore(time) {
